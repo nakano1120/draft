@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>あほ</title>
+    <style>
+        body{
+            margin:0;
+            background-color:#000000;
+        }
+        .main{
+            background-color:#ffffff ;
+            width:100%;
+            height:100%;
+        }
+        .result{
+            width:400px;
+            height:300px;
+        }
+        table{
+            width:80vw;
+            height:100vh;
+            margin:0 auto;
+            font-size:300%;
+            text-align:center;
+            border-collapse:collapse;
+        }
+        .deka{
+            font-size:10vw;
+            width:100vw;
+        }
+        .doko{
+            font-size:4vw;
+        }
+        td{
+            width:20vw;
+        }
+        .ue{
+            background-color:#ff9900;
+            color:#ffffff;
+        }
+        img{
+            width:80%;
+            height:auto;
+        }
+    </style>
+    <link rel="stylesheet" href="animate.min.css">
+</head>
+<body>
+    <div class="main animated fadeIn delay-2s">
+        <table>
+            <tr>
+                <td id="team_i" class="ue">G</td>
+                <td id="team">読売</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="name" class="deka" colspan="4">山田　太郎</td>
+            </tr>        
+            <tr>
+                <td colspan="2"></td>
+                <td id="posi" class="doko">捕手</td>
+                <td id="mae" class="doko">明訓高校</td>
+            </tr>
+            <tr>
+                <td colspan="4"><img src="baj.png"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        window.onload=function(){
+            let user1 = window.prompt("選手名を入力(7文字以内)", "山田　太郎")
+            if(user1.length>7){
+                alert("長いよ！")
+                location.reload();
+            }
+            document.getElementById("name").innerText=user1
+
+            let user2 = window.prompt("チーム名を入力(4文字以内)", "読売")
+            if(user2.length>4){
+                alert("長いよ！")
+                location.reload();
+            }
+            document.getElementById("team").innerText=user2
+            
+            let user3 = window.prompt("チームイニシャルを入力(1文字以内)", "G")
+            if(user3.length>1){
+                alert("長いよ！")
+                location.reload();
+            }
+            document.getElementById("team_i").innerText=user3
+
+            let user5 = window.prompt("チーム色コードを入力(#??????で入力)", "#ff9900")
+            if(user5.length!=7){
+                alert("おかしい！")
+                location.reload();
+            }
+            document.getElementById('team_i').style.backgroundColor=user5
+
+            let user6 = window.prompt("ポジション（内野手など）を入力(4文字以内)", "捕手")
+            if(user6.length>4){
+                alert("長いよ！")
+                location.reload();
+            }
+            document.getElementById("posi").innerText=user6
+
+            let user7 = window.prompt("所属チームを入力(7文字以内)", "バカ田大学")
+            if(user7.length>7){
+                alert("長いよ！")
+                location.reload();
+            }
+            document.getElementById("mae").innerText=user7
+        }
+    </script>
+</body>
+</html>
